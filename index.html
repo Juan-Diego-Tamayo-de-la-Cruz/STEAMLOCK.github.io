@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SteamLock — Software a la medida para operaciones que no se pueden detener</title>
+<meta name="description" content="SteamLock construye sistemas a la medida para empresas industriales, comerciales y de servicios: control de piso, inventarios, trazabilidad e integración con equipo existente.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="SteamLock — Software a la medida para operaciones que no se pueden detener">
+<meta property="og:description" content="Sistemas que aguantan turno completo. Desarrollo a la medida, integración con tu equipo actual y soporte que responde el mismo día.">
+<meta property="og:image" content="assets/og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/cube.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<!-- ============ NAVEGACIÓN ============ -->
+<header class="nav" id="nav">
+  <div class="shell nav__inner">
+    <a class="brand" href="#top" aria-label="SteamLock, inicio">
+      <svg viewBox="0 0 24 26" aria-hidden="true">
+        <polygon points="12,3 20.7,8 12,13 3.3,8" fill="#A8B1B8"/>
+        <polygon points="3.3,8 12,13 12,23 3.3,18" fill="#7C858D"/>
+        <polygon points="20.7,8 12,13 12,23 20.7,18" fill="#5E6870"/>
+      </svg>
+      SteamLock
+    </a>
+
+    <nav aria-label="Principal">
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#construimos">Qué construimos</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#proceso">Cómo trabajamos</a></li>
+        <li><a href="#tecnologias">Tecnologías</a></li>
+      </ul>
+    </nav>
+
+    <div style="display:flex; gap:.6rem; align-items:center;">
+      <a class="btn btn--forge" href="#contacto">Solicitar cotización</a>
+      <button class="btn btn--ghost nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menú</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="shell hero__grid">
+      <div>
+        <p class="hero__eyebrow"><span class="pip" aria-hidden="true"></span> Celaya, Guanajuato · atendemos todo el Bajío</p>
+
+        <h1>Sistemas que aguantan el turno completo</h1>
+
+        <p class="lede hero__lede">
+          Desarrollamos software a la medida para empresas que todavía sostienen su
+          operación con hojas de cálculo, libretas y memoria. Levantamos el proceso
+          real, lo convertimos en un sistema y lo dejamos funcionando en piso.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--forge" href="#contacto">Solicitar cotización</a>
+          <a class="btn btn--outline" href="#proyectos">Ver proyectos</a>
+        </div>
+
+        <!-- Cifras de ejemplo: sustituir por datos reales antes de publicar -->
+        <div class="hero__facts">
+          <div>
+            <div class="fact__value">5</div>
+            <div class="fact__label">sistemas en operación</div>
+          </div>
+          <div>
+            <div class="fact__value">3</div>
+            <div class="fact__label">industrias atendidas</div>
+          </div>
+          <div>
+            <div class="fact__value">24 h</div>
+            <div class="fact__label">Disponibilidad</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__stage">
+        <svg class="cube" viewBox="0 0 420 430" role="img" aria-labelledby="cubeTitle" id="cube">
+          <title id="cubeTitle">Bloque de circuitos ensamblándose, emblema de SteamLock</title>
+
+          <g class="cube__wrap" id="cubeWrap">
+            <ellipse class="cube__shadow" cx="210" cy="345" rx="112" ry="20"/>
+
+            <!-- Vapor -->
+            <g class="cube__steam" aria-hidden="true">
+              <path class="steam steam--a" d="M196 96 C 186 76, 208 62, 198 42 C 190 26, 204 18, 200 6"/>
+              <path class="steam steam--b" d="M216 94 C 228 74, 208 60, 220 40 C 230 24, 218 16, 222 4"/>
+              <path class="steam steam--c" d="M208 90 C 202 70, 214 58, 208 38"/>
+            </g>
+
+      <g class="cube__body">
+        <polygon class="face face--top" points="210.0,100.0 309.6,157.5 210.0,215.0 110.4,157.5"/>
+        <polygon class="face face--left" points="110.4,157.5 210.0,215.0 210.0,330.0 110.4,272.5"/>
+        <polygon class="face face--right" points="309.6,157.5 210.0,215.0 210.0,330.0 309.6,272.5"/>
+      </g>
+      <g class="cube__traces">
+        <path class="trace trace--top" style="--i:0" d="M253.8,132.2 L229.9,146.0 L200.0,128.8 L168.2,147.2"/>
+        <circle class="node" style="--i:0" cx="168.2" cy="147.2" r="3.4"/>
+        <path class="trace trace--top" style="--i:1" d="M273.7,152.9 L243.9,170.2 L218.0,155.2 L182.1,175.9"/>
+        <circle class="node" style="--i:1" cx="182.1" cy="175.9" r="3.4"/>
+        <path class="trace trace--top" style="--i:2" d="M204.0,119.5 L231.9,135.7 L241.9,129.9"/>
+        <circle class="node" style="--i:2" cx="241.9" cy="129.9" r="3.4"/>
+        <path class="trace trace--top" style="--i:3" d="M168.2,158.7 L206.0,180.5 L186.1,192.0"/>
+        <circle class="node" style="--i:3" cx="186.1" cy="192.0" r="3.4"/>
+        <path class="trace trace--top" style="--i:4" d="M237.9,185.1 L212.0,170.2 L237.9,155.2"/>
+        <circle class="node" style="--i:4" cx="237.9" cy="155.2" r="3.4"/>
+        <path class="trace trace--left" style="--i:5" d="M120.4,179.3 L152.2,197.8 L152.2,234.6 L124.4,218.5"/>
+        <circle class="node" style="--i:5" cx="124.4" cy="218.5" r="3.4"/>
+        <path class="trace trace--left" style="--i:6" d="M172.2,202.3 L172.2,236.9 L196.1,250.6 L196.1,287.4"/>
+        <circle class="node" style="--i:6" cx="196.1" cy="287.4" r="3.4"/>
+        <path class="trace trace--left" style="--i:7" d="M134.3,247.2 L166.2,265.6 L166.2,293.2"/>
+        <circle class="node" style="--i:7" cx="166.2" cy="293.2" r="3.4"/>
+        <path class="trace trace--left" style="--i:8" d="M118.4,254.1 L140.3,266.8"/>
+        <circle class="node" style="--i:8" cx="140.3" cy="266.8" r="3.4"/>
+        <path class="trace trace--left" style="--i:9" d="M182.1,263.3 L182.1,224.2"/>
+        <circle class="node" style="--i:9" cx="182.1" cy="224.2" r="3.4"/>
+        <path class="trace trace--right" style="--i:10" d="M295.6,177.1 L295.6,211.6 L265.8,228.8 L265.8,261.0"/>
+        <circle class="node" style="--i:10" cx="265.8" cy="261.0" r="3.4"/>
+        <path class="trace trace--right" style="--i:11" d="M243.9,213.8 L275.7,195.5 L275.7,211.6"/>
+        <circle class="node" style="--i:11" cx="275.7" cy="211.6" r="3.4"/>
+        <path class="trace trace--right" style="--i:12" d="M223.9,257.6 L247.8,243.8 L247.8,282.9"/>
+        <circle class="node" style="--i:12" cx="247.8" cy="282.9" r="3.4"/>
+        <path class="trace trace--right" style="--i:13" d="M289.7,265.6 L257.8,284.0"/>
+        <circle class="node" style="--i:13" cx="257.8" cy="284.0" r="3.4"/>
+        <path class="trace trace--right" style="--i:14" d="M229.9,279.4 L229.9,307.0"/>
+        <circle class="node" style="--i:14" cx="229.9" cy="307.0" r="3.4"/>
+      <
+
+            <!-- Cotas de plano técnico -->
+            <g aria-hidden="true">
+              <line class="dim" x1="330" y1="157.5" x2="368" y2="157.5"/>
+              <line class="dim" x1="330" y1="272.5" x2="368" y2="272.5"/>
+              <line class="dim" x1="360" y1="157.5" x2="360" y2="272.5"/>
+              <text class="dim-text" x="366" y="219">115</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FRICCIÓN ============ -->
+  <section class="friction">
+    <div class="shell">
+      <h2>Dónde se pierde el dinero</h2>
+      <p class="lede">
+        Casi ningún negocio nos busca por tecnología. Nos buscan porque algo ya
+        les está costando: tiempo, material o clientes.
+      </p>
+
+      <div class="friction__list">
+        <div class="friction__item">
+          <h3>Nadie sabe cuánto hay</h3>
+          <p>El inventario vive en un archivo que solo una persona actualiza, y casi nunca coincide con lo que está en el almacén.</p>
+        </div>
+        <div class="friction__item">
+          <h3>El reporte llega tarde</h3>
+          <p>Los datos existen, pero armar el corte toma dos días de capturar y cruzar. Para entonces la decisión ya se tomó a ciegas.</p>
+        </div>
+        <div class="friction__item">
+          <h3>El sistema no habla con nada</h3>
+          <p>La báscula, el punto de venta y la contabilidad funcionan por separado, así que alguien captura lo mismo tres veces.</p>
+        </div>
+        <div class="friction__item">
+          <h3>El proceso vive en una persona</h3>
+          <p>Cuando esa persona falta o se va, el conocimiento se va con ella y la operación se detiene.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUÉ CONSTRUIMOS ============ -->
+  <section class="band" id="construimos">
+    <div class="shell">
+      <div class="band__head">
+        <h2>Qué construimos</h2>
+        <p class="lede">Cinco frentes. Casi siempre un proyecto combina dos o tres de ellos.</p>
+      </div>
+
+      <div class="build__row">
+        <div class="build__mark mark">01</div>
+        <h3>Software a la medida</h3>
+        <div>
+          <p>Sistemas hechos para tu proceso, no plantillas adaptadas a la fuerza. Órdenes de trabajo, control de producción, expedientes, cotizadores.</p>
+          <div class="build__tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">PostgreSQL</span></div>
+        </div>
+      </div>
+
+      <div class="build__row">
+        <div class="build__mark mark">02</div>
+        <h3>Control de inventario y almacén</h3>
+        <div>
+          <p>Entradas, salidas, lotes, caducidades y mínimos. Con lectura de código de barras para que el registro pase en segundos, no en una captura al final del día.</p>
+          <div class="build__tags"><span class="tag">Código de barras</span><span class="tag">Kardex</span><span class="tag">Multi-almacén</span></div>
+        </div>
+      </div>
+
+      <div class="build__row">
+        <div class="build__mark mark">03</div>
+        <h3>Trazabilidad e inspección</h3>
+        <div>
+          <p>Registro pieza por pieza, detección de defectos con visión artificial y reportes por turno, lote o número de serie.</p>
+          <div class="build__tags"><span class="tag">OpenCV</span><span class="tag">Visión artificial</span><span class="tag">Reportes por turno</span></div>
+        </div>
+      </div>
+
+      <div class="build__row">
+        <div class="build__mark mark">04</div>
+        <h3>Integración con equipo existente</h3>
+        <div>
+          <p>Conectamos lo que ya tienes: básculas, lectores, PLC, impresoras de etiqueta y sistemas contables. Nada se tira si todavía sirve.</p>
+          <div class="build__tags"><span class="tag">Modbus</span><span class="tag">API REST</span><span class="tag">Raspberry Pi</span><span class="tag">Arduino</span></div>
+        </div>
+      </div>
+
+      <div class="build__row">
+        <div class="build__mark mark">05</div>
+        <h3>Tableros y reportes</h3>
+        <div>
+          <p>La información que hoy tardas dos días en armar, disponible en pantalla y exportable. Un solo número por indicador, sin interpretaciones.</p>
+          <div class="build__tags"><span class="tag">Tableros en vivo</span><span class="tag">Excel</span><span class="tag">PDF</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROYECTOS ============ -->
+  <section class="band band--surface" id="proyectos">
+    <div class="shell">
+      <div class="band__head">
+        <h2>Proyectos</h2>
+        <p class="lede">Tres implementaciones con el problema que resolvieron y lo que cambió después.</p>
+      </div>
+
+      <!-- Sustituir textos, métricas y capturas por los proyectos reales -->
+      <article class="work__item reveal">
+        <div>
+          <p class="mark">Manufactura automotriz</p>
+          <h3 style="margin:.6rem 0 .8rem; font-size:1.6rem;">Trazabilidad de defectos en línea de ensamble</h3>
+          <p>La planta llevaba los registros de fallas en sharepoints(Onedrive) y en un historial fisico, cada supervisor de calidad sabia sobre las fallas que el habia reportado, pero no habia una plataforma donde todo se automatizar e implementar por primera vez en la planta un algoritmo de IA para saber que hacer cuando se presenta una nueva falla</p>
+          <div class="work__meta">
+            <div class="work__metric"><span>-38%</span><small>retrabajo por turno</small></div>
+            <div class="work__metric"><span>100%</span><small>piezas con historial</small></div>
+            <div class="work__metric"><span>75%</span><small>Tiempo en realizar el reporte</small></div>
+
+          </div>
+        </div>
+        <div class="work__shot">
+         <img src="assets/proyecto-1.png" alt="Descripcion de la captura">
+        </div>
+      </article>
+
+      <article class="work__item reveal">
+        <div>
+          <p class="mark">Servicio público municipal</p>
+          <h3 style="margin:.6rem 0 .8rem; font-size:1.6rem;">Sistema integral de comercializacion para organismos operadores de agua</h3>
+          <p>Facturacion, ordenes de trabajo, cobranza, nominas, gestion de almacen, cartera, gestion del padron de usuarios, todo en un solo sistema</p>
+          <div class="work__meta">
+            <div class="work__metric"><span>3</span><small>municipios operando</small></div>
+            <div class="work__metric"><span>+50k</span><small> usuarios gestionados</small></div>
+            <div class="work__metric"><span>+10M</span><small> de pesos facturados cada mes/small></div>
+
+          </div>
+        </div>
+        <div class="work__shot">
+          <img src="assets/proyecto-2.png" alt="Descripcion de la captura">
+
+        </div>
+      </article>
+
+      <article class="work__item reveal">
+        <div>
+          <p class="mark">Comercio y producción</p>
+          <h3 style="margin:.6rem 0 .8rem; font-size:1.6rem;">Punto de venta e inventario para multiples sucursales y giros</h3>
+          <p>Cada sucursal manejaba su propio archivo y las mermas no se veían hasta el cierre de mes. Unificamos venta, producción e inventario en un solo sistema con corte diario automático.</p>
+          <div class="work__meta">
+            <div class="work__metric"><span>-22%</span><small>merma mensual</small></div>
+            <div class="work__metric"><span>8</span><small>sucursales en línea</small></div>
+          </div>
+        </div>
+        <div class="work__shot">
+          <img src="assets/proyecto-3.png" alt="Descripcion de la captura">
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PROCESO ============ -->
+  <section class="band" id="proceso">
+    <div class="shell">
+      <div class="band__head">
+        <h2>Cómo trabajamos</h2>
+        <p class="lede">Cuatro etapas. Al terminar cada una sabes exactamente qué recibiste y qué sigue.</p>
+      </div>
+
+      <div class="process">
+        <div class="process__step">
+          <span class="process__n">Etapa 1</span>
+          <h3>Vamos a verlo</h3>
+          <p>Visitamos tu operación y seguimos el proceso donde ocurre. Sin esta etapa cualquier cotización es una adivinanza.</p>
+        </div>
+        <div class="process__step">
+          <span class="process__n">Etapa 2</span>
+          <h3>Propuesta cerrada</h3>
+          <p>Alcance, entregables, tiempo y precio por escrito. Si algo queda fuera, lo decimos antes de firmar.</p>
+        </div>
+        <div class="process__step">
+          <span class="process__n">Etapa 3</span>
+          <h3>Entregas parciales</h3>
+          <p>Cada dos o tres semanas ves algo funcionando. Los ajustes ocurren ahí, no al final cuando ya cuestan caro.</p>
+        </div>
+        <div class="process__step">
+          <span class="process__n">Etapa 4</span>
+          <h3>Arranque y acompañamiento</h3>
+          <p>Instalamos, capacitamos a quien lo va a usar y nos quedamos durante el primer mes de operación real.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TECNOLOGÍAS ============ -->
+  <section class="band band--surface" id="tecnologias">
+    <div class="shell">
+      <div class="band__head">
+        <h2>Con qué está hecho</h2>
+        <p class="lede">Herramientas estables y con comunidad. Nada que dependa de un proveedor único.</p>
+      </div>
+
+      <div class="stack__grid">
+        <div class="stack__cell"><strong>Python</strong><small>Lógica y automatización</small></div>
+        <div class="stack__cell"><strong>FastAPI</strong><small>Servicios y API</small></div>
+        <div class="stack__cell"><strong>React</strong><small>Interfaces web</small></div>
+        <div class="stack__cell"><strong>PostgreSQL</strong><small>Base de datos</small></div>
+        <div class="stack__cell"><strong>SQL Server</strong><small>Entornos corporativos</small></div>
+        <div class="stack__cell"><strong>C# / .NET</strong><small>Escritorio y servicios</small></div>
+        <div class="stack__cell"><strong>OpenCV</strong><small>Visión artificial</small></div>
+        <div class="stack__cell"><strong>Raspberry Pi</strong><small>Cómputo en piso</small></div>
+        <div class="stack__cell"><strong>Arduino</strong><small>Sensores y control</small></div>
+        <div class="stack__cell"><strong>Docker</strong><small>Despliegue</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section class="band" id="contacto">
+    <div class="shell contact__grid">
+      <div>
+        <h2>Cuéntanos qué se está atorando</h2>
+        <p class="lede" style="margin-top:1rem;">
+          Respondemos el mismo día hábil. La primera visita y el diagnóstico
+          no tienen costo ni compromiso.
+        </p>
+
+        <div class="contact__direct">
+          <div>
+            <small>Correo</small>
+            <a href="mailto:contacto@steamlock.mx">contacto@steamlock.mx</a>
+          </div>
+          <div>
+            <small>WhatsApp</small>
+            <a href="https://wa.me/524610000000">461 000 0000</a>
+          </div>
+          <div>
+            <small>Dónde estamos</small>
+            <span>Celaya, Guanajuato</span>
+          </div>
+        </div>
+      </div>
+
+      <form class="form" id="quoteForm" novalidate>
+        <div class="form__done" id="formDone" hidden role="status">
+          Mensaje enviado. Te contactamos hoy mismo al correo que dejaste.
+        </div>
+
+        <div class="form__row">
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+            <span class="msg" data-msg-for="nombre"></span>
+          </div>
+          <div class="field">
+            <label for="empresa">Empresa</label>
+            <input id="empresa" name="empresa" type="text" autocomplete="organization">
+            <span class="msg" data-msg-for="empresa"></span>
+          </div>
+        </div>
+
+        <div class="form__row">
+          <div class="field">
+            <label for="correo">Correo</label>
+            <input id="correo" name="correo" type="email" autocomplete="email" required>
+            <span class="msg" data-msg-for="correo"></span>
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono</label>
+            <input id="telefono" name="telefono" type="tel" autocomplete="tel">
+            <span class="msg" data-msg-for="telefono"></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="tipo">Qué necesitas</label>
+          <select id="tipo" name="tipo">
+            <option>Software a la medida</option>
+            <option>Control de inventario</option>
+            <option>Trazabilidad e inspección</option>
+            <option>Integración con equipo existente</option>
+            <option>Tableros y reportes</option>
+            <option>Todavía no lo tengo claro</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="mensaje">Qué está pasando hoy</label>
+          <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos el problema en tus palabras. No necesitas términos técnicos."></textarea>
+          <span class="msg" data-msg-for="mensaje"></span>
+        </div>
+
+        <button class="btn btn--forge btn--block" type="submit">Enviar solicitud</button>
+        <p class="form__note">Usamos tus datos solo para responderte. No los compartimos con nadie.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__top">
+      <div>
+        <a class="brand" href="#top">
+          <svg viewBox="0 0 24 26" aria-hidden="true">
+            <polygon points="12,3 20.7,8 12,13 3.3,8" fill="#A8B1B8"/>
+            <polygon points="3.3,8 12,13 12,23 3.3,18" fill="#7C858D"/>
+            <polygon points="20.7,8 12,13 12,23 20.7,18" fill="#5E6870"/>
+          </svg>
+          SteamLock
+        </a>
+        <p style="margin-top:1rem; font-size:var(--fs-small); max-width:36ch;">
+          Software a la medida para empresas industriales, comerciales y de
+          servicios del Bajío.
+        </p>
+      </div>
+
+      <div>
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="#construimos">Qué construimos</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#proceso">Cómo trabajamos</a></li>
+          <li><a href="#tecnologias">Tecnologías</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:contacto@steamlock.mx">contacto@steamlock.mx</a></li>
+          <li><a href="https://wa.me/524610000000">461 000 0000</a></li>
+          <li><a href="#contacto">Solicitar cotización</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; <span id="year">2026</span> SteamLock. Celaya, Guanajuato.</span>
+      <span>Aviso de privacidad</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/cube.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

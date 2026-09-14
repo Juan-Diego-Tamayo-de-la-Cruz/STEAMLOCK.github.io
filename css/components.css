@@ -1,0 +1,182 @@
+/* ==========================================================
+   SteamLock — components.css
+   Piezas reutilizables: marca, botones, etiquetas, formulario.
+   ========================================================== */
+
+/* ---------- Marca ---------- */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  font-family: "Archivo", sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.035em;
+}
+.brand svg { width: 26px; height: 26px; }
+.footer .brand { color: #fff; font-size: 1.35rem; }
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.18s var(--ease), background 0.22s var(--ease),
+              color 0.22s var(--ease), border-color 0.22s var(--ease);
+}
+.btn:active { transform: translateY(1px); }
+
+.btn--forge {
+  background: var(--forge);
+  color: #fff;
+}
+.btn--forge:hover { background: #A83010; }
+
+.btn--outline {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: transparent;
+}
+.btn--outline:hover { background: var(--ink); color: var(--surface); }
+
+.btn--ghost {
+  border-color: var(--line);
+  color: var(--ink);
+  background: transparent;
+  padding: 0.55rem 1rem;
+}
+.btn--ghost:hover { border-color: var(--ink); }
+
+.btn--block { width: 100%; }
+
+/* ---------- Punto de estado ---------- */
+.pip {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--forge);
+  flex: none;
+  box-shadow: 0 0 0 0 rgba(226, 67, 26, 0.5);
+  animation: pulse 2.8s var(--ease) infinite;
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(226, 67, 26, 0.45); }
+  60%  { box-shadow: 0 0 0 9px rgba(226, 67, 26, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(226, 67, 26, 0); }
+}
+
+/* ---------- Etiquetas de tecnología ---------- */
+.tag {
+  font-size: var(--fs-micro);
+  color: var(--steel);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 0.15rem 0.5rem;
+  background: var(--paper);
+}
+
+/* ---------- Índice de sección ---------- */
+.mark {
+  font-family: "Archivo", sans-serif;
+  font-weight: 800;
+  font-size: 0.8125rem;
+  color: var(--forge);
+}
+
+/* ---------- Placeholder de captura ---------- */
+.shot {
+  aspect-ratio: 16 / 10;
+  border: 1px dashed var(--line);
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0 11px,
+      rgba(85, 96, 106, 0.05) 11px 22px
+    ),
+    var(--surface);
+  display: grid;
+  place-content: center;
+  gap: 0.35rem;
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--steel);
+}
+.shot strong { color: var(--ink-soft); font-weight: 600; font-size: var(--fs-small); }
+.shot small { font-size: var(--fs-micro); }
+
+/* ---------- Formulario ---------- */
+.form {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: clamp(1.5rem, 3.5vw, 2.5rem);
+}
+.form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.field { display: grid; gap: 0.4rem; margin-bottom: 1rem; }
+.field label { font-size: var(--fs-micro); color: var(--steel); }
+.field input,
+.field select,
+.field textarea {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 2px;
+  padding: 0.7rem 0.8rem;
+  font-size: var(--fs-small);
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--ink);
+  background: #fff;
+  outline: none;
+}
+.field textarea { resize: vertical; min-height: 110px; }
+.field[data-error="true"] input,
+.field[data-error="true"] textarea { border-color: var(--forge); }
+.field .msg {
+  font-size: var(--fs-micro);
+  color: var(--forge);
+  min-height: 1rem;
+}
+.form__note {
+  font-size: var(--fs-micro);
+  color: var(--steel);
+  margin-top: 0.9rem;
+}
+.form__done {
+  border: 1px solid var(--forge);
+  background: var(--forge-wash);
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.25rem;
+  font-size: var(--fs-small);
+}
+.form__done[hidden] { display: none; }
+
+@media (max-width: 560px) {
+  .form__row { grid-template-columns: 1fr; }
+}
+
+/* ---------- Revelado al hacer scroll ----------
+   Se aplica solo a dos zonas de la página, no a todo. */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal[data-shown="true"] {
+  opacity: 1;
+  transform: none;
+}

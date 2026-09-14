@@ -1,0 +1,126 @@
+/* ==========================================================
+   SteamLock — base.css
+   Tokens de diseño, reset y tipografía.
+   ========================================================== */
+
+:root {
+  /* Superficies: lámina de acero fría */
+  --paper:        #E4E7E9;
+  --paper-deep:   #D4D9DC;
+  --surface:      #F5F6F7;
+  --surface-alt:  #EDEFF1;
+
+  /* Tinta */
+  --ink:          #14181C;
+  --ink-soft:     #2B333A;
+  --steel:        #55606A;
+  --line:         #C6CCD1;
+  --line-soft:    #DDE1E4;
+
+  /* Acento único: incandescencia */
+  --forge:        #C93C12;
+  --forge-bright: #E2431A;
+  --forge-wash:   #FBEAE4;
+
+  /* Escala tipográfica */
+  --fs-display: clamp(2.6rem, 6vw, 4.7rem);
+  --fs-h2:      clamp(1.9rem, 4.2vw, 3.1rem);
+  --fs-h3:      1.25rem;
+  --fs-body:    1.0625rem;
+  --fs-small:   0.9375rem;
+  --fs-micro:   0.8125rem;
+
+  /* Ritmo */
+  --gutter:     clamp(1.25rem, 5vw, 4.5rem);
+  --stack:      clamp(4.5rem, 10vw, 9rem);
+  --maxw:       1240px;
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--fs-display); }
+h2 { font-size: var(--fs-h2); }
+h3 {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+p { margin: 0; max-width: 62ch; }
+a { color: inherit; }
+img, svg { display: block; max-width: 100%; }
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: var(--forge);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--forge);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.shell {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--ink);
+  color: var(--surface);
+  padding: 0.75rem 1.25rem;
+  z-index: 200;
+}
+.skip:focus { left: 0; }
+
+/* Texto de apoyo bajo un encabezado */
+.lede {
+  color: var(--steel);
+  font-size: 1.125rem;
+  max-width: 54ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

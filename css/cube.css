@@ -1,0 +1,124 @@
+/* ==========================================================
+   SteamLock — cube.css
+   Cubo isométrico del hero: caras, trazas de circuito y vapor.
+   La secuencia de ensamblaje corre una sola vez al cargar.
+   ========================================================== */
+
+.cube {
+  width: min(100%, 480px);
+  overflow: visible;
+}
+
+@media (max-width: 900px) {
+  .cube { width: min(72%, 290px); }
+}
+
+.cube__wrap {
+  transform-origin: 50% 55%;
+  will-change: transform;
+  transition: transform 0.5s var(--ease);
+}
+
+/* ---------- Sombra de apoyo ---------- */
+.cube__shadow {
+  fill: #55606A;
+  opacity: 0;
+  animation: shadow-in 0.9s var(--ease) 0.15s forwards;
+}
+@keyframes shadow-in {
+  to { opacity: 0.16; }
+}
+
+/* ---------- Caras ---------- */
+.face {
+  stroke: #454E56;
+  stroke-width: 1;
+  stroke-linejoin: round;
+  opacity: 0;
+}
+.face--top   { fill: #A8B1B8; animation: drop-top   0.75s var(--ease) 0.10s forwards; }
+.face--left  { fill: #7C858D; animation: drop-left  0.75s var(--ease) 0.28s forwards; }
+.face--right { fill: #5E6870; animation: drop-right 0.75s var(--ease) 0.44s forwards; }
+
+@keyframes drop-top {
+  from { opacity: 0; transform: translateY(-46px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes drop-left {
+  from { opacity: 0; transform: translate(-40px, 22px); }
+  to   { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes drop-right {
+  from { opacity: 0; transform: translate(40px, 22px); }
+  to   { opacity: 1; transform: translate(0, 0); }
+}
+
+/* ---------- Trazas de circuito ---------- */
+.trace {
+  fill: none;
+  stroke: #E4E7E9;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  opacity: 0.85;
+  animation: draw 0.85s var(--ease) forwards;
+  animation-delay: calc(0.95s + var(--i) * 0.055s);
+}
+.trace--right { stroke: #EDEFF1; }
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+.node {
+  fill: #E2431A;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: node-in 0.4s var(--ease) forwards;
+  animation-delay: calc(1.55s + var(--i) * 0.055s);
+}
+@keyframes node-in {
+  from { opacity: 0; transform: scale(0.2); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ---------- Vapor ---------- */
+.steam {
+  fill: none;
+  stroke: #55606A;
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  opacity: 0;
+  stroke-dasharray: 46 120;
+  animation: steam-rise 4.6s linear infinite;
+}
+.steam--a { animation-delay: 2.20s; }
+.steam--b { animation-delay: 3.10s; stroke-width: 2.6; }
+.steam--c { animation-delay: 3.85s; stroke-width: 2.2; }
+
+@keyframes steam-rise {
+  0%   { opacity: 0;    stroke-dashoffset: 66;  transform: translateY(6px); }
+  18%  { opacity: 0.42; }
+  70%  { opacity: 0.22; }
+  100% { opacity: 0;    stroke-dashoffset: -60; transform: translateY(-14px); }
+}
+
+/* ---------- Cotas del plano ---------- */
+.dim { stroke: #55606A; stroke-width: 1; opacity: 0; animation: fade-in 0.6s var(--ease) 2.1s forwards; }
+.dim-text { fill: #55606A; font-family: "IBM Plex Sans", sans-serif; font-size: 11px; opacity: 0; animation: fade-in 0.6s var(--ease) 2.25s forwards; }
+@keyframes fade-in { to { opacity: 0.7; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .face, .trace, .node, .cube__shadow, .dim, .dim-text {
+    opacity: 1;
+    stroke-dashoffset: 0;
+    transform: none;
+    animation: none;
+  }
+  .cube__shadow { opacity: 0.16; }
+  .dim, .dim-text { opacity: 0.7; }
+  .steam { animation: none; opacity: 0.3; stroke-dashoffset: 0; stroke-dasharray: none; }
+}

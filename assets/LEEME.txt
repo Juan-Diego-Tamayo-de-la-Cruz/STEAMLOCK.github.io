@@ -1,0 +1,8 @@
+Coloca aquí:
+  proyecto-1.png   1600 x 1000 px
+  proyecto-2.png   1600 x 1000 px
+  proyecto-3.png   1600 x 1000 px
+  og-image.png     1200 x 630 px
+
+Luego, en index.html, cambia cada bloque <div class="shot">...</div>
+por <img src="assets/proyecto-1.png" alt="Descripcion de la captura">
