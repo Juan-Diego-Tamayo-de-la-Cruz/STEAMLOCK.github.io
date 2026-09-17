@@ -1,5 +1,5 @@
 /* ==========================================================
-   SteamLock — main.js
+   SteamBlock — main.js
    Navegación, revelado de proyectos y validación del formulario.
    ========================================================== */
 
@@ -142,7 +142,7 @@
   }
 
   function buildMessage() {
-    var lines = ['Hola SteamLock, quiero solicitar una cotización.', ''];
+    var lines = ['Hola SteamBlock, quiero solicitar una cotización.', ''];
 
     var campos = [
       ['Nombre', value('nombre')],

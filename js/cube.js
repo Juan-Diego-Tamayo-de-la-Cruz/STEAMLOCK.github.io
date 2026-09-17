@@ -1,5 +1,5 @@
 /* ==========================================================
-   SteamLock — cube.js
+   SteamBlock — cube.js
    El ensamblaje del cubo corre en CSS. Este archivo solo agrega
    el seguimiento del puntero, y se desactiva si la persona pidió
    menos movimiento o está en una pantalla táctil.
