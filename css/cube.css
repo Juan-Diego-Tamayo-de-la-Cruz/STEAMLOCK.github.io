@@ -13,6 +13,10 @@
   .cube { width: min(72%, 290px); }
 }
 
+@media (max-width: 680px) {
+  .cube { width: min(62%, 230px); }
+}
+
 .cube__wrap {
   transform-origin: 50% 55%;
   will-change: transform;

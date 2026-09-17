@@ -116,6 +116,7 @@
 
 /* ---------- Formulario ---------- */
 .form {
+  min-width: 0;
   background: var(--paper);
   border: 1px solid var(--line);
   padding: clamp(1.5rem, 3.5vw, 2.5rem);
@@ -125,11 +126,15 @@
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
-.field { display: grid; gap: 0.4rem; margin-bottom: 1rem; }
+.field { display: grid; gap: 0.4rem; margin-bottom: 1rem; min-width: 0; }
 .field label { font-size: var(--fs-micro); color: var(--steel); }
 .field input,
 .field select,
 .field textarea {
+  width: 100%;
+  /* Sin esto el select se queda del ancho de su opción más larga
+     y estira la página entera en pantallas chicas. */
+  min-width: 0;
   border: 1px solid var(--line);
   background: var(--surface);
   border-radius: 2px;
@@ -168,6 +173,14 @@
 
 @media (max-width: 560px) {
   .form__row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+  /* Abajo de 16px, iOS hace zoom solo al enfocar un campo. */
+  .field input,
+  .field select,
+  .field textarea { font-size: 1rem; }
+  .btn { padding: 0.95rem 1.6rem; }
 }
 
 /* ---------- Revelado al hacer scroll ----------
