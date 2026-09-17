@@ -62,6 +62,10 @@
   if (!form) return;
 
   var done = document.getElementById('formDone');
+  var waLink = document.getElementById('waLink');
+
+  /* Número que recibe las solicitudes: 411 241 4051 (lada de México, 52). */
+  var WHATSAPP = '524112414051';
 
   var rules = {
     nombre: {
@@ -117,13 +121,43 @@
       return;
     }
 
-    // Aquí va el envío real: fetch a tu endpoint, Formspree, EmailJS, etc.
-    // fetch('/api/leads', { method: 'POST', body: new FormData(form) })
+    var url = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(buildMessage());
 
+    if (waLink) waLink.href = url;
     if (done) {
       done.hidden = false;
       done.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
-    form.reset();
+
+    // Se abre en otra pestaña para no perder lo que ya escribió.
+    // Si el navegador bloquea la ventana, queda el enlace de respaldo en el aviso.
+    var win = window.open(url, '_blank');
+    if (win) win.opener = null;
   });
+
+  /* ---------- Armado del mensaje de WhatsApp ---------- */
+  function value(name) {
+    var el = form.elements[name];
+    return el ? el.value.trim() : '';
+  }
+
+  function buildMessage() {
+    var lines = ['Hola SteamLock, quiero solicitar una cotización.', ''];
+
+    var campos = [
+      ['Nombre', value('nombre')],
+      ['Empresa', value('empresa')],
+      ['Correo', value('correo')],
+      ['Teléfono', value('telefono')],
+      ['Qué necesita', value('tipo')]
+    ];
+
+    campos.forEach(function (campo) {
+      if (campo[1]) lines.push('*' + campo[0] + ':* ' + campo[1]);
+    });
+
+    lines.push('', '*Qué está pasando hoy:*', value('mensaje'));
+
+    return lines.join('\n');
+  }
 })();
