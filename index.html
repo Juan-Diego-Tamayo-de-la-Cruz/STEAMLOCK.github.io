@@ -38,6 +38,7 @@
 
     <nav aria-label="Principal">
       <ul class="nav__links" id="navLinks">
+        <li><a href="#nosotros">Quiénes somos</a></li>
         <li><a href="#construimos">Qué construimos</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#proceso">Cómo trabajamos</a></li>
@@ -186,6 +187,63 @@
     </div>
   </section>
 
+  <!-- ============ QUIÉNES SOMOS ============ -->
+  <section class="band band--surface" id="nosotros">
+    <div class="shell">
+      <div class="band__head">
+        <h2>Quiénes somos</h2>
+        <p class="lede">Ingenieros que primero entienden el negocio y después escriben código.</p>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__text">
+          <p>
+            SteamLock es un equipo de ingenieros en sistemas computacionales con base
+            en Celaya, Guanajuato. Trabajamos con empresas industriales, comerciales y
+            de servicios del Bajío, y con organismos públicos municipales.
+          </p>
+          <p>
+            Nacimos de una idea simple: el software serio no tiene por qué ser un lujo
+            reservado a las corporaciones. Un taller, un comercio o un organismo
+            municipal merecen herramientas hechas para su operación, no un sistema
+            genérico al que hay que adaptarse a fuerza.
+          </p>
+          <p>
+            Por eso empezamos en piso. Seguimos el proceso donde ocurre, hablamos con
+            quien lo opera todos los días y hasta entonces proponemos algo. Lo que
+            entregamos tiene que aguantar el turno completo, no solo la demostración.
+          </p>
+        </div>
+
+        <div>
+          <p class="about__sub">En qué somos distintos</p>
+          <ul class="values">
+            <li>
+              <span class="values__n" aria-hidden="true">01</span>
+              <span><strong>Entendemos el negocio antes de escribir código.</strong> No suponemos: preguntamos, medimos y proponemos.</span>
+            </li>
+            <li>
+              <span class="values__n" aria-hidden="true">02</span>
+              <span><strong>Hablas con quien construye tu sistema.</strong> Sin intermediarios ni ejecutivos de cuenta que traduzcan mal.</span>
+            </li>
+            <li>
+              <span class="values__n" aria-hidden="true">03</span>
+              <span><strong>Diseñamos para tres años, no para el viernes.</strong> El sistema crece con la operación en lugar de estorbarle.</span>
+            </li>
+            <li>
+              <span class="values__n" aria-hidden="true">04</span>
+              <span><strong>Alcance, tiempo y precio por escrito.</strong> Si algo queda fuera, lo decimos antes de firmar.</span>
+            </li>
+            <li>
+              <span class="values__n" aria-hidden="true">05</span>
+              <span><strong>Seguimos ahí después del arranque.</strong> El proyecto no termina el día de la instalación.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ QUÉ CONSTRUIMOS ============ -->
   <section class="band" id="construimos">
     <div class="shell">
@@ -297,6 +355,22 @@
         </div>
         <div class="work__shot">
           <img src="assets/proyecto-3.png" alt="Descripcion de la captura">
+        </div>
+      </article>
+
+      <article class="work__item reveal">
+        <div>
+          <p class="mark">Servicio público municipal</p>
+          <h3 style="margin:.6rem 0 .8rem; font-size:1.6rem;">Sistema de métricas para organismos de agua potable</h3>
+          <p>La operación existía en papel y en capturas sueltas: nadie sabía cuántas órdenes se atendían, qué material se gastaba ni de dónde venía el dinero. Construimos una plataforma web de indicadores que sigue el ciclo completo de cada orden de trabajo, registra los materiales utilizados, ubica cada servicio en el mapa y arma los tableros financieros con los pagos recibidos por tipo y por zona.</p>
+          <div class="work__meta">
+            <div class="work__metric"><span>+50k</span><small>registros procesados</small></div>
+            <div class="work__metric"><span>100%</span><small>órdenes georreferenciadas</small></div>
+            <div class="work__metric"><span>0</span><small>reportes armados a mano</small></div>
+          </div>
+        </div>
+        <div class="work__shot">
+          <img src="assets/proyecto-4.png" alt="Tablero de control con indicadores de órdenes de trabajo, costo de materiales y distribución por servicio">
         </div>
       </article>
     </div>
@@ -479,7 +553,7 @@
           </div>
           <div>
             <small>WhatsApp</small>
-            <a href="https://wa.me/524610000000">461 000 0000</a>
+            <a href="https://wa.me/524112414051">411 241 4051</a>
           </div>
           <div>
             <small>Dónde estamos</small>
@@ -490,7 +564,8 @@
 
       <form class="form" id="quoteForm" novalidate>
         <div class="form__done" id="formDone" hidden role="status">
-          Mensaje enviado. Te contactamos hoy mismo al correo que dejaste.
+          Te abrimos WhatsApp con el mensaje ya armado: solo tienes que enviarlo.
+          ¿No se abrió solo? <a id="waLink" href="https://wa.me/524112414051" target="_blank" rel="noopener">Ábrelo aquí</a>.
         </div>
 
         <div class="form__row">
@@ -537,8 +612,8 @@
           <span class="msg" data-msg-for="mensaje"></span>
         </div>
 
-        <button class="btn btn--forge btn--block" type="submit">Enviar solicitud</button>
-        <p class="form__note">Usamos tus datos solo para responderte. No los compartimos con nadie.</p>
+        <button class="btn btn--forge btn--block" type="submit">Enviar por WhatsApp</button>
+        <p class="form__note">Al enviar, se abre WhatsApp con tus datos ya escritos en el mensaje. Los usamos solo para responderte; no los compartimos con nadie.</p>
       </form>
     </div>
   </section>
@@ -567,7 +642,8 @@
       <div>
         <h4>Secciones</h4>
         <ul>
-          <li><a href="#construimos">Qué construimos</a></li>
+          <li><a href="#nosotros">Quiénes somos</a></li>
+        <li><a href="#construimos">Qué construimos</a></li>
           <li><a href="#proyectos">Proyectos</a></li>
           <li><a href="#proceso">Cómo trabajamos</a></li>
           <li><a href="#clientes">Clientes</a></li>
@@ -579,7 +655,7 @@
         <h4>Contacto</h4>
         <ul>
           <li><a href="mailto:contacto@steamlock.mx">contacto@steamlock.mx</a></li>
-          <li><a href="https://wa.me/524610000000">461 000 0000</a></li>
+          <li><a href="https://wa.me/524112414051">411 241 4051</a></li>
           <li><a href="#contacto">Solicitar cotización</a></li>
         </ul>
       </div>
