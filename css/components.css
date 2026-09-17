@@ -36,11 +36,11 @@
 }
 .btn:active { transform: translateY(1px); }
 
-.btn--forge {
-  background: var(--forge);
+.btn--accent {
+  background: var(--accent);
   color: #fff;
 }
-.btn--forge:hover { background: #A83010; }
+.btn--accent:hover { background: var(--accent-deep); }
 
 .btn--outline {
   border-color: var(--ink);
@@ -64,15 +64,15 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--forge);
+  background: var(--accent);
   flex: none;
-  box-shadow: 0 0 0 0 rgba(226, 67, 26, 0.5);
+  box-shadow: 0 0 0 0 rgba(47, 107, 176, 0.45);
   animation: pulse 2.8s var(--ease) infinite;
 }
 @keyframes pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(226, 67, 26, 0.45); }
-  60%  { box-shadow: 0 0 0 9px rgba(226, 67, 26, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(226, 67, 26, 0); }
+  0%   { box-shadow: 0 0 0 0 rgba(47, 107, 176, 0.40); }
+  60%  { box-shadow: 0 0 0 9px rgba(47, 107, 176, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(47, 107, 176, 0); }
 }
 
 /* ---------- Etiquetas de tecnología ---------- */
@@ -90,7 +90,7 @@
   font-family: "Archivo", sans-serif;
   font-weight: 800;
   font-size: 0.8125rem;
-  color: var(--forge);
+  color: var(--accent);
 }
 
 /* ---------- Placeholder de captura ---------- */
@@ -101,7 +101,7 @@
     repeating-linear-gradient(
       -45deg,
       transparent 0 11px,
-      rgba(85, 96, 106, 0.05) 11px 22px
+      rgba(79, 104, 126, 0.06) 11px 22px
     ),
     var(--surface);
   display: grid;
@@ -146,10 +146,10 @@
 }
 .field textarea { resize: vertical; min-height: 110px; }
 .field[data-error="true"] input,
-.field[data-error="true"] textarea { border-color: var(--forge); }
+.field[data-error="true"] textarea { border-color: var(--accent); }
 .field .msg {
   font-size: var(--fs-micro);
-  color: var(--forge);
+  color: var(--accent);
   min-height: 1rem;
 }
 .form__note {
@@ -158,8 +158,8 @@
   margin-top: 0.9rem;
 }
 .form__done {
-  border: 1px solid var(--forge);
-  background: var(--forge-wash);
+  border: 1px solid var(--accent);
+  background: var(--accent-wash);
   padding: 1rem 1.1rem;
   margin-bottom: 1.25rem;
   font-size: var(--fs-small);

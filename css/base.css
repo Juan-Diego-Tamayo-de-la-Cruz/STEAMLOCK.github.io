@@ -4,23 +4,31 @@
    ========================================================== */
 
 :root {
-  /* Superficies: lámina de acero fría */
-  --paper:        #E4E7E9;
-  --paper-deep:   #D4D9DC;
-  --surface:      #F5F6F7;
-  --surface-alt:  #EDEFF1;
+  /* Superficies: azul pastel */
+  --paper:        #E6EEF8;
+  --paper-deep:   #D5E2F1;
+  --surface:      #F3F7FC;
+  --surface-alt:  #E7EFF9;
 
   /* Tinta */
-  --ink:          #14181C;
-  --ink-soft:     #2B333A;
-  --steel:        #55606A;
-  --line:         #C6CCD1;
-  --line-soft:    #DDE1E4;
+  --ink:          #17293D;
+  --ink-soft:     #2E4358;
+  --steel:        #4F687E;
+  --line:         #B9CCE1;
+  --line-soft:    #DBE6F3;
 
-  /* Acento único: incandescencia */
-  --forge:        #C93C12;
-  --forge-bright: #E2431A;
-  --forge-wash:   #FBEAE4;
+  /* Acento único: azul */
+  --accent:        #2F6BB0;
+  --accent-deep:   #245891;
+  --accent-bright: #7DAEE4;
+  --accent-wash:   #E2ECFA;
+
+  /* Tinta sobre las bandas oscuras */
+  --on-dark:      #CBDAE9;
+  --on-dark-dim:  #9FB4C9;
+  --dark-line:    #2C4159;
+  --dark-inset:   #1E3247;
+  --dark-edge:    #38516B;
 
   /* Escala tipográfica */
   --fs-display: clamp(2.6rem, 6vw, 4.7rem);
@@ -81,12 +89,12 @@ button, input, select, textarea {
 }
 
 ::selection {
-  background: var(--forge);
+  background: var(--accent);
   color: #fff;
 }
 
 :focus-visible {
-  outline: 2px solid var(--forge);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 2px;
 }

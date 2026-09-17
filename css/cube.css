@@ -21,7 +21,7 @@
 
 /* ---------- Sombra de apoyo ---------- */
 .cube__shadow {
-  fill: #55606A;
+  fill: #4F687E;
   opacity: 0;
   animation: shadow-in 0.9s var(--ease) 0.15s forwards;
 }
@@ -31,14 +31,14 @@
 
 /* ---------- Caras ---------- */
 .face {
-  stroke: #454E56;
+  stroke: #3B546E;
   stroke-width: 1;
   stroke-linejoin: round;
   opacity: 0;
 }
-.face--top   { fill: #A8B1B8; animation: drop-top   0.75s var(--ease) 0.10s forwards; }
-.face--left  { fill: #7C858D; animation: drop-left  0.75s var(--ease) 0.28s forwards; }
-.face--right { fill: #5E6870; animation: drop-right 0.75s var(--ease) 0.44s forwards; }
+.face--top   { fill: #A9C3DD; animation: drop-top   0.75s var(--ease) 0.10s forwards; }
+.face--left  { fill: #7B9CBE; animation: drop-left  0.75s var(--ease) 0.28s forwards; }
+.face--right { fill: #56789F; animation: drop-right 0.75s var(--ease) 0.44s forwards; }
 
 @keyframes drop-top {
   from { opacity: 0; transform: translateY(-46px); }
@@ -56,7 +56,7 @@
 /* ---------- Trazas de circuito ---------- */
 .trace {
   fill: none;
-  stroke: #E4E7E9;
+  stroke: #E6EEF8;
   stroke-width: 1.7;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -66,14 +66,14 @@
   animation: draw 0.85s var(--ease) forwards;
   animation-delay: calc(0.95s + var(--i) * 0.055s);
 }
-.trace--right { stroke: #EDEFF1; }
+.trace--right { stroke: #F3F7FC; }
 
 @keyframes draw {
   to { stroke-dashoffset: 0; }
 }
 
 .node {
-  fill: #E2431A;
+  fill: #2F6BB0;
   opacity: 0;
   transform-box: fill-box;
   transform-origin: center;
@@ -88,7 +88,7 @@
 /* ---------- Vapor ---------- */
 .steam {
   fill: none;
-  stroke: #55606A;
+  stroke: #4F687E;
   stroke-width: 3.2;
   stroke-linecap: round;
   opacity: 0;
@@ -107,8 +107,8 @@
 }
 
 /* ---------- Cotas del plano ---------- */
-.dim { stroke: #55606A; stroke-width: 1; opacity: 0; animation: fade-in 0.6s var(--ease) 2.1s forwards; }
-.dim-text { fill: #55606A; font-family: "IBM Plex Sans", sans-serif; font-size: 11px; opacity: 0; animation: fade-in 0.6s var(--ease) 2.25s forwards; }
+.dim { stroke: #4F687E; stroke-width: 1; opacity: 0; animation: fade-in 0.6s var(--ease) 2.1s forwards; }
+.dim-text { fill: #4F687E; font-family: "IBM Plex Sans", sans-serif; font-size: 11px; opacity: 0; animation: fade-in 0.6s var(--ease) 2.25s forwards; }
 @keyframes fade-in { to { opacity: 0.7; } }
 
 @media (prefers-reduced-motion: reduce) {
