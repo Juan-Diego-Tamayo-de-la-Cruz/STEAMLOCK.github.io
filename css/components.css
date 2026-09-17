@@ -194,3 +194,110 @@
   opacity: 1;
   transform: none;
 }
+
+/* ---------- Carrusel de capturas ----------
+   El desplazamiento es nativo (scroll-snap), así que se puede deslizar
+   con el dedo aunque el JS no cargue. */
+.shots { position: relative; }
+
+.shots__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.shots__track::-webkit-scrollbar { display: none; }
+.shots__track:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.shots__slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  min-width: 0;
+}
+.shots__slide img {
+  width: 100%;
+  /* Las capturas son de pantalla completa (~2:1). Con 16/9 y cover se
+     perdía media interfaz por los lados. */
+  aspect-ratio: 2 / 1;
+  object-fit: contain;
+  background: var(--surface);
+}
+
+.shots__nav {
+  position: absolute;
+  top: calc(50% - 2.5rem);
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: rgba(243, 247, 252, 0.92);
+  color: var(--ink);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease), opacity 0.2s var(--ease);
+}
+.shots__nav:hover { background: #fff; border-color: var(--ink); }
+.shots__nav[disabled] { opacity: 0.35; cursor: default; }
+.shots__nav--prev { left: 0.6rem; }
+.shots__nav--next { right: 0.6rem; }
+
+.shots__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 0.7rem;
+}
+.shots__count {
+  font-family: "Archivo", sans-serif;
+  font-weight: 800;
+  font-size: var(--fs-micro);
+  color: var(--accent);
+  flex: none;
+}
+.shots__caption {
+  font-size: var(--fs-micro);
+  color: var(--steel);
+  margin: 0;
+}
+.shots__dots {
+  display: flex;
+  gap: 0.4rem;
+  margin-left: auto;
+  flex: none;
+}
+.shots__dot {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.shots__dot::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--line);
+  transition: background 0.2s var(--ease);
+}
+.shots__dot[aria-current="true"]::before { background: var(--accent); }
+
+@media (max-width: 560px) {
+  .shots__nav { width: 40px; height: 40px; }
+  .shots__bar { flex-wrap: wrap; gap: 0.5rem 0.75rem; }
+  .shots__dots { margin-left: 0; width: 100%; justify-content: center; }
+}

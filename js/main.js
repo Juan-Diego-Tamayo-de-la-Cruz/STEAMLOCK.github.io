@@ -57,6 +57,67 @@
     revealables.forEach(function (el) { el.dataset.shown = 'true'; });
   }
 
+  /* ---------- Carrusel de capturas ----------
+     El desplazamiento lo hace el navegador (scroll-snap): aquí solo van
+     las flechas, los puntos y el pie que dice qué se está viendo. */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-shots]'), function (shots) {
+    var track = shots.querySelector('.shots__track');
+    var slides = shots.querySelectorAll('.shots__slide');
+    var prev = shots.querySelector('.shots__nav--prev');
+    var next = shots.querySelector('.shots__nav--next');
+    var count = shots.querySelector('.shots__count');
+    var caption = shots.querySelector('.shots__caption');
+    var dots = shots.querySelectorAll('.shots__dot');
+    var captions = (shots.getAttribute('data-captions') || '').split('|');
+    var total = slides.length;
+    var actual = 0;
+
+    if (!track || total < 2) return;
+
+    function irA(i) {
+      actual = Math.max(0, Math.min(total - 1, i));
+      track.scrollTo({ left: slides[actual].offsetLeft - slides[0].offsetLeft, behavior: 'smooth' });
+      pintar();
+    }
+
+    function pintar() {
+      if (count) count.textContent = (actual + 1) + ' / ' + total;
+      if (caption && captions[actual]) caption.textContent = captions[actual];
+      Array.prototype.forEach.call(dots, function (dot, i) {
+        if (i === actual) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
+      });
+      if (prev) prev.disabled = actual === 0;
+      if (next) next.disabled = actual === total - 1;
+    }
+
+    prev.addEventListener('click', function () { irA(actual - 1); });
+    next.addEventListener('click', function () { irA(actual + 1); });
+
+    Array.prototype.forEach.call(dots, function (dot, i) {
+      dot.addEventListener('click', function () { irA(i); });
+    });
+
+    // Al deslizar con el dedo, el índice lo manda el scroll, no los botones.
+    var pendiente;
+    track.addEventListener('scroll', function () {
+      clearTimeout(pendiente);
+      pendiente = setTimeout(function () {
+        var ancho = slides[0].getBoundingClientRect().width;
+        if (!ancho) return;
+        var i = Math.round(track.scrollLeft / ancho);
+        if (i !== actual) { actual = Math.max(0, Math.min(total - 1, i)); pintar(); }
+      }, 90);
+    }, { passive: true });
+
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); irA(actual + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); irA(actual - 1); }
+    });
+
+    pintar();
+  });
+
   /* ---------- Formulario ---------- */
   var form = document.getElementById('quoteForm');
   if (!form) return;
